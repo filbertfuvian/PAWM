@@ -1,0 +1,38 @@
+/* styles/Register.module.css */
+.registerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .registerForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; /* Maksimal lebar form */
+    background-color:  #666b6d86;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .registerForm input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .registerForm button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .registerForm button:hover {
+    background-color: #555; /* Warna saat hover */
+  }

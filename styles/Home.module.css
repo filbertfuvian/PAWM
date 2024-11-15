@@ -21,15 +21,11 @@
   cursor: grab;
 }
 
-.cardContainer:active {
-  cursor: grabbing; /* Change cursor when dragging */
-}
-
 .card {
-  min-width: 300px;
+  min-width: 250px;
   margin-right: 1rem;
   background: #f1f1f148;
-  border-radius: 8px;
+  border-radius: 16px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 1rem;
@@ -42,4 +38,10 @@
 .cardImage {
   width: 100%;
   border-radius: 8px;
+}
+
+.container_title {
+  margin-top: 1rem ;
+  padding: 1rem;
+  font-size: 1.5rem;
 }

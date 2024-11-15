@@ -1,0 +1,67 @@
+
+.navbar {
+    background-color: #333;
+    align-items: center;
+}
+
+.navbar-brand {
+    padding: 4rem;
+    color: #ffffff !important; /* Warna teks untuk brand */
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between; /* Memisahkan kiri dan kanan */
+    align-items: center; /* Vertikal center */
+    padding: 10px 20px; /* Padding untuk navbar */
+    background-color: #333; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    gap: 8rem;
+}
+.nav-left, .nav-right {
+    display: flex; /* Mengatur item dalam flexbox */
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.nav-link {
+    color: #ffffff !important; /* Warna teks untuk link */
+}
+
+.nav-link:hover {
+    color: #ffcc00 !important; /* Warna teks saat hover */
+}
+
+.dropdown-toggle {
+    border-radius: 16px;
+    background-color: #6db2fc !important;
+    color: #ffffff !important; /* Warna teks tombol dropdown */
+  }
+  
+.dropdown-toggle:hover {
+    color: #ffcc00 !important; /* Warna teks saat hover */
+}
+
+.dropdown-item {
+    background-color:6db2fc;
+    color: #000000 !important; /* Warna teks untuk item dropdown */
+}
+
+.dropdown-item:hover {
+    background-color: #ffcc00; /* Warna latar belakang saat hover pada item dropdown */
+}
+
+.nav-profile {
+    align-items: end;
+    color: #ffffff !important;
+}
+
+.logout {
+    border: none;
+    background: none;
+    color: #ffffff !important;
+}
+
+.logout:hover{
+    color: #ffcc00;
+}
