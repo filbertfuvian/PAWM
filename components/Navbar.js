@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import {useState, useEffect }from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import styles from '../styles/NavBar.module.css';
+import styles from '../styles/Navbar.module.css';
 import { auth } from '../lib/firebase';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { getUserNickname } from '../lib/getNickname';
