@@ -17,7 +17,7 @@ export default function Home() {
             </header>
             <main className={styles.main}>
                 <div className={styles.container_title}>
-                    Available courses
+                    Apa itu virtuallab?
                 </div>
                 <div className={styles.description}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -29,7 +29,7 @@ export default function Home() {
                     className={styles.cardContainer}
                 >
                     {courses.map(course => (
-                        <Link key={course.id} href={course.link} passHref>
+                        <Link key={course.id} href={course.link}>
                             <div className={styles.card}>
                                 <img src={course.image} alt={course.title} className={styles.cardImage} draggable='false' />
                                 <h3>{course.title}</h3>
