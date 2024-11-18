@@ -1,5 +1,6 @@
 .Container {
   max-width: 800px; 
+  margin-top: 40px;
   margin: 0 auto; 
   padding: 20px; 
   background-color: #f9f9f9; 

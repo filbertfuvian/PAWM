@@ -29,7 +29,7 @@ export default function Home() {
                     className={styles.cardContainer}
                 >
                     {courses.map(course => (
-                        <Link key={course.id} href={course.link}>
+                        <Link key={course.id} href={course.link} passHref>
                             <div className={styles.card}>
                                 <img src={course.image} alt={course.title} className={styles.cardImage} draggable='false' />
                                 <h3>{course.title}</h3>
