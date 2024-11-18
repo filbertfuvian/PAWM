@@ -1,12 +1,11 @@
-// pages/index.js
 import Link from 'next/link';
 import styles from '../styles/Home.module.css'
 
 
 const courses = [
-    { id: 1, title: 'Matematika', image: '/math.jpg', link:'/courses/math' },
-    { id: 2, title: 'Fisika', image: '/physics.webp', link:'/courses/physics' },
-    { id: 3, title: 'Kimia', image: '/chemistry.jpeg', link:'/courses/chemistry' },
+    { id: 1, title: 'Matematika', image: '/public/math.jpg', link:'/courses/math' },
+    { id: 2, title: 'Fisika', image: '/public/physics.webp', link:'/courses/physics' },
+    { id: 3, title: 'Kimia', image: '/public/chemistry.jpeg', link:'/courses/chemistry' },
 ];
 
 export default function Home() {
