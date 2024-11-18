@@ -1,15 +1,19 @@
-// pages/register.js
 import { useState } from 'react';
 import { auth } from '../lib/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { db } from '../lib/firebase';
 import { doc, setDoc } from "firebase/firestore";
-import styles from '../styles/Register.module.css'; // Impor gaya
+import styles from '../styles/Register.module.css'; 
+import { useRouter } from 'next/router';
 
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword ] = useState('');
   const [error, setError] = useState('');
+  const router = useRouter();
+
+const materi = [ 'matematika', 'fisika', 'kimia' ]
+const range = Array.from({ length: 10 }, (_, i) => i);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -17,75 +21,31 @@ const Register = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Simpan data pengguna ke Firestore
       await setDoc(doc(db, "users", user.uid), {
         email: user.email,
         nickname: email.split('@')[0],
-        materi: {
-          matematika: {
-            completed_video: 0,
-            max_video: 10,
-            video1: false,
-            video2: false,
-            video3: false,
-            video4: false,
-            video5: false,
-            video6: false,
-            video7: false,
-            video8: false,
-            video9: false,
-            video10: false
-          },
-          fisika: {
-            completed_video: 0,
-            max_video: 10,
-            video1: false,
-            video2: false,
-            video3: false,
-            video4: false,
-            video5: false,
-            video6: false,
-            video7: false,
-            video8: false,
-            video9: false,
-            video10: false
-          },
-          kimia: {
-            completed_video: 0,
-            max_video: 10,
-            video1: false,
-            video2: false,
-            video3: false,
-            video4: false,
-            video5: false,
-            video6: false,
-            video7: false,
-            video8: false,
-            video9: false,
-            video10: false
-          },
-        },
-        kuis: {
-          matematika: {
-            completed: false,
-            score: 0,
-            max_score: 100,
-          },
-          fisika: {
-            completed: false,
-            score: 0,
-            max_score: 100,
-          },
-          kimia: {
-            completed: false,
-            score: 0,
-            max_score: 100,
-          },
+        });
+
+
+      for (const subject of materi) {
+        const videoStatus = {}; 
+        
+        for (const num of range) {
+          videoStatus[`video${num + 1}`] = false; 
         }
-      });
+
+        await setDoc(doc(db, "users", user.uid, "materi", subject), videoStatus);
+
+        await setDoc(doc(db, "users", user.uid, "kuis", subject), {
+          kuisStatus: false,
+          score: 0
+        });
+
+      }
 
       alert('User  registered successfully!');
-      // Redirect or perform other actions after registration
+      router.push('/');
+
     } catch (error) {
       setError(error.message);
     }

@@ -1,54 +1,53 @@
-
 .navbar {
     background-color: #333;
     align-items: center;
+    justify-content: center;
 }
 
 .navbar-brand {
     padding: 4rem;
-    color: #ffffff !important; /* Warna teks untuk brand */
+    color: #ffffff !important; 
 }
 
 .nav{
     display: flex;
-    justify-content: space-between; /* Memisahkan kiri dan kanan */
-    align-items: center; /* Vertikal center */
-    padding: 10px 20px; /* Padding untuk navbar */
-    background-color: #333; /* Warna latar belakang */
-    color: white; /* Warna teks */
+    align-items: center;
+    padding: 10px 20px; 
+    background-color: #333; 
+    color: white; 
     gap: 8rem;
 }
 .nav-left, .nav-right {
-    display: flex; /* Mengatur item dalam flexbox */
+    display: flex;
     flex-direction: row;
     gap: 4rem;
 }
 
 .nav-link {
-    color: #ffffff !important; /* Warna teks untuk link */
+    color: #ffffff !important; 
 }
 
 .nav-link:hover {
-    color: #ffcc00 !important; /* Warna teks saat hover */
+    color: #ffcc00 !important;
 }
 
 .dropdown-toggle {
     border-radius: 16px;
     background-color: #6db2fc !important;
-    color: #ffffff !important; /* Warna teks tombol dropdown */
+    color: #ffffff !important; 
   }
   
 .dropdown-toggle:hover {
-    color: #ffcc00 !important; /* Warna teks saat hover */
+    color: #ffcc00 !important;
 }
 
 .dropdown-item {
     background-color:6db2fc;
-    color: #000000 !important; /* Warna teks untuk item dropdown */
+    color: #000000 !important;
 }
 
 .dropdown-item:hover {
-    background-color: #ffcc00; /* Warna latar belakang saat hover pada item dropdown */
+    background-color: #ffcc00; 
 }
 
 .nav-profile {

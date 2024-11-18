@@ -7,12 +7,6 @@ const courses = [
     { id: 1, title: 'Matematika', image: '/math.jpg', link:'/courses/math' },
     { id: 2, title: 'Fisika', image: '/physics.webp', link:'/courses/physics' },
     { id: 3, title: 'Kimia', image: '/chemistry.jpeg', link:'/courses/chemistry' },
-    { id: 4, title: 'Computational', image: '/computer.jpg', link:'/courses/computer' },
-	{ id: 5, title: 'Artificial Intelligence', image: '/ai.webp', link:'/courses/ai' },
-	{ id: 6, title: 'Olahraga', image: '/olahraga.png', link:'/courses/olahraga' },
-    { id: 7, title: 'Bahasa Indonesia', image: '/bahasa.jpg', link:'/courses/bahasa' },
-    { id: 8, title: 'English', image: '/english.jpg', link:'/courses/english' },
-    { id: 9, title: 'Pancasila', image: '/pancasila.jpg', link:'/courses/pancasila' },
 ];
 
 export default function Home() {
@@ -24,23 +18,13 @@ export default function Home() {
             </header>
             <main className={styles.main}>
                 <div className={styles.container_title}>
-                    Lanjutkan course kamu
+                    Available courses
                 </div>
-                <div
-                    className={styles.cardContainer}
-                >
-                    {courses.map(course => (
-                        <Link key={course.id} href={course.link} passHref>
-                            <div className={styles.card}>
-                                <img src={course.image} alt={course.title} className={styles.cardImage} draggable='false' />
-                                <h3>{course.title}</h3>
-                            </div>
-                        </Link>
-                    ))}
+                <div className={styles.description}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </div>
-                
                 <div className={styles.container_title}>
-                    Lanjutkan course kamu
+                    Available courses
                 </div>
                 <div
                     className={styles.cardContainer}

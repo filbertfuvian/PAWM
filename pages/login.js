@@ -1,6 +1,7 @@
 // pages/login.js
 import { useState } from 'react';
 import { auth } from '../lib/firebase';
+import { useRouter } from 'next/router';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import styles from '../styles/Login.module.css'; // Impor gaya
 
@@ -8,13 +9,14 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const router = useRouter();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
       alert('User  logged in successfully!');
-      // Redirect or perform other actions after login
+      router.push('/');
     } catch (error) {
       setError(error.message);
     }

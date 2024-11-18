@@ -10,6 +10,7 @@ const UserProfile = () => {
   const [nickname, setNickname] = useState('');
   const [newNickname, setNewNickname] = useState('');
   const userId = auth.currentUser ?.uid;
+  const [videoStats, setVideoStats] = useState({});
 
   const fetchUserData = async () => {
     if (userId) {
@@ -29,6 +30,35 @@ const UserProfile = () => {
   useEffect(() => {
     fetchUserData();
   }, [userId, db]);
+
+  const fetchVideoStats = async () => {
+    if (!userId) return;
+
+    const subjects = ['matematika', 'fisika', 'kimia'];
+    const stats = {};
+
+    for (const subject of subjects) {
+      const subjectDocRef = doc(db, 'users', userId, 'materi', subject);
+      const subjectDoc = await getDoc(subjectDocRef);
+
+      if (subjectDoc.exists()) {
+        const videoData = subjectDoc.data();
+        const totalVideos = Object.keys(videoData).length; 
+        const completedVideos = Object.values(videoData).filter(status => status === true).length; 
+        
+        stats[subject] = { completed: completedVideos, total: totalVideos };
+      } else {
+        console.error(`No data found for subject: ${subject}`);
+        stats[subject] = { completed: 0, total: 0 };
+      }
+    }
+
+    setVideoStats(stats);
+  };
+
+  useEffect(() => {
+    fetchVideoStats();
+  }, [userId]); 
 
   const handleNicknameChange = async () => {
     if (userId && userData) {
@@ -68,13 +98,16 @@ const UserProfile = () => {
 
           <h2 className={styles['sectionTitle']}>Progress Video Materi</h2>
           <ul className={styles['list']}>
-            {userData.materi && Object.keys(userData.materi).map((subject) => (
+            {Object.keys(videoStats).map((subject) => (
               <li className={styles['listItem']} key={subject}>
                 <div>
-                    {subject.charAt(0).toUpperCase() + subject.slice(1)}: 
-                    {userData.materi[subject].completed_video} / {userData.materi[subject].max_video}
+                  {subject.charAt(0).toUpperCase() + subject.slice(1)}: 
+                  {videoStats[subject].completed} / {videoStats[subject].total}
                 </div>
-                <ProgressBar completed={userData.materi[subject].completed_video} total={userData.materi[subject].max_video} />
+                <ProgressBar 
+                  completed={videoStats[subject].completed} 
+                  total={videoStats[subject].total} 
+                />
               </li>
             ))}
           </ul>

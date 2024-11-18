@@ -1,6 +1,5 @@
-// ProgressBar.js
 import React from 'react';
-import styles from '../styles/ProgressBar.module.css'; // Create this CSS module for styling
+import styles from '../styles/ProgressBar.module.css'; 
 
 const ProgressBar = ({ completed, total }) => {
   const percentage = total > 0 ? (completed / total) * 100 : 0;

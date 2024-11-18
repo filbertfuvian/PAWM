@@ -3,7 +3,7 @@ import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { db, auth } from '../../lib/firebase';
 import styles from '../../styles/Course.module.css'; 
 
-const Math = () => {
+const Chemistry = () => {
   const [userData, setUserData] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState('');
   const [videoCompleted, setVideoCompleted] = useState('');
@@ -13,70 +13,71 @@ const Math = () => {
   const userId = auth.currentUser ?.uid;
 
   const videoList = [
-    { id: 1, title: 'Video Matematika 1', src: 'https://example.com/videos/matematika1.mp4' },
-    { id: 2, title: 'Video Matematika 2', src: 'https://example.com/videos/matematika2.mp4' },
-    { id: 3, title: 'Video Matematika 3', src: 'https://example.com/videos/matematika3.mp4' },
-    { id: 4, title: 'Video Matematika 4', src: 'https://example.com/videos/matematika4.mp4' },
-    { id: 5, title: 'Video Matematika 5', src: 'https://example.com/videos/matematika5.mp4' },
-    { id: 6, title: 'Video Matematika 6', src: 'https://example.com/videos/matematika6.mp4' },
-    { id: 7, title: 'Video Matematika 7', src: 'https://example.com/videos/matematika7.mp4' },
-    { id: 8, title: 'Video Matematika 8', src: 'https://example.com/videos/matematika8.mp4' },
-    { id: 9, title: 'Video Matematika 9', src: 'https://example.com/videos/matematika9.mp4' },
-    { id: 10, title: 'Video Matematika 10', src: 'https://example.com/videos/matematika10.mp4' },
+    { id: 1, title: 'Video Kimia 1', src: 'https://example.com/videos/Kimia1.mp4' },
+    { id: 2, title: 'Video Kimia 2', src: 'https://example.com/videos/Kimia2.mp4' },
+    { id: 3, title: 'Video Kimia 3', src: 'https://example.com/videos/Kimia3.mp4' },
+    { id: 4, title: 'Video Kimia 4', src: 'https://example.com/videos/Kimia4.mp4' },
+    { id: 5, title: 'Video Kimia 5', src: 'https://example.com/videos/Kimia5.mp4' },
+    { id: 6, title: 'Video Kimia 6', src: 'https://example.com/videos/Kimia6.mp4' },
+    { id: 7, title: 'Video Kimia 7', src: 'https://example.com/videos/Kimia7.mp4' },
+    { id: 8, title: 'Video Kimia 8', src: 'https://example.com/videos/Kimia8.mp4' },
+    { id: 9, title: 'Video Kimia 9', src: 'https://example.com/videos/Kimia9.mp4' },
+    { id: 10, title: 'Video Kimia 10', src: 'https://example.com/videos/Kimia10.mp4' },
   ];
 
-  const quizQuestions = [
-    {
-      "question": "Apa turunan dari fungsi f(x) = 3x^2 + 2x - 5?",
-      "options": ["3x + 2", "6x + 2", "6x - 2", "6x^2 + 2"],
-      "answer": "6x + 2"
-    },
-    {
-      "question": "Apa integral tak tentu dari f(x) = 4x^3?",
-      "options": ["x^4 + C", "x^3 + C", "x^2 + C", "4x^4 + C"],
-      "answer": "x^4 + C"
-    },
-    {
-      "question": "Jika f(x) = e^x, apa turunan dari f(x)?",
-      "options": ["e^x", "x * e^x", "e^(x+1)", "ln(x)"],
-      "answer": "e^x"
-    },
-    {
-      "question": "Apa integral tak tentu dari f(x) = 1/x?",
-      "options": ["ln(x)", "ln|x| + C", "1/x + C", "ln(x) + C"],
-      "answer": "ln|x| + C"
-    },
-    {
-      "question": "Apa nilai limit lim(x→0) sin(x)/x?",
-      "options": ["1", "0", "∞", "Tidak ada"],
-      "answer": "1"
-    },
-    {
-      "question": "Apa turunan dari fungsi f(x) = cos(x)?",
-      "options": ["-sin(x)", "sin(x)", "-cos(x)", "tan(x)"],
-      "answer": "-sin(x)"
-    },
-    {
-      "question": "Jika f(x) = x^2, berapa nilai turunan kedua f(x)?",
-      "options": ["2", "1", "0", "4x"],
-      "answer": "2"
-    },
-    {
-      "question": "Apa integral dari f(x) = 2x dengan batas 0 hingga 2?",
-      "options": ["2", "4", "6", "8"],
-      "answer": "4"
-    },
-    {
-      "question": "Apa nilai dari lim(x→∞) 1/x?",
-      "options": ["∞", "1", "0", "Tidak ada"],
-      "answer": "0"
-    },
-    {
-      "question": "Jika f(x) = ln(x), apa turunan dari f(x)?",
-      "options": ["1/x", "ln(x)", "x", "e^x"],
-      "answer": "1/x"
-    }
-  ];
+  const quizQuestions = 
+    [
+        {
+            "question": "Apa nama senyawa dengan rumus kimia H2SO4?",
+            "options": ["Asam klorida", "Asam nitrat", "Asam sulfat", "Asam asetat"],
+            "answer": "Asam sulfat"
+        },
+        {
+            "question": "Apa jenis ikatan yang terdapat dalam molekul H2O?",
+            "options": ["Ikatan ionik", "Ikatan kovalen", "Ikatan hidrogen", "Ikatan logam"],
+            "answer": "Ikatan kovalen"
+        },
+        {
+            "question": "Apa nilai bilangan kuantum spin untuk elektron?",
+            "options": ["0", "1", "1/2", "-1"],
+            "answer": "1/2"
+        },
+        {
+            "question": "Apa fungsi dari katalis dalam reaksi kimia?",
+            "options": ["Menurunkan energi aktivasi", "Mengubah entalpi reaksi", "Menghasilkan lebih banyak produk", "Mempercepat kesetimbangan"],
+            "answer": "Menurunkan energi aktivasi"
+        },
+        {
+            "question": "Gas mana yang sering digunakan dalam proses fotosintesis?",
+            "options": ["Oksigen", "Nitrogen", "Karbon dioksida", "Hidrogen"],
+            "answer": "Karbon dioksida"
+        },
+        {
+            "question": "Berapa mol gas yang terdapat dalam 22,4 liter gas ideal pada STP?",
+            "options": ["1 mol", "2 mol", "0,5 mol", "0,1 mol"],
+            "answer": "1 mol"
+        },
+        {
+            "question": "Apa jenis reaksi yang menghasilkan air dari hidrogen dan oksigen?",
+            "options": ["Reaksi pengendapan", "Reaksi oksidasi", "Reaksi sintesis", "Reaksi redoks"],
+            "answer": "Reaksi sintesis"
+        },
+        {
+            "question": "Berapa pH larutan dengan konsentrasi ion H+ sebesar 10^-3 M?",
+            "options": ["3", "7", "10", "13"],
+            "answer": "3"
+        },
+        {
+            "question": "Apa nama unsur dengan simbol Au?",
+            "options": ["Perak", "Emas", "Aluminium", "Timah"],
+            "answer": "Emas"
+        },
+        {
+            "question": "Apa konfigurasi elektron dari atom karbon (C)?",
+            "options": ["1s^2 2s^2 2p^2", "1s^2 2s^2 2p^4", "1s^2 2s^2 2p^6", "1s^2 2s^1 2p^3"],
+            "answer": "1s^2 2s^2 2p^2"
+        }
+        ]
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -95,7 +96,7 @@ const Math = () => {
 
   const markAsCompleted = async (videoId) => {
     if (userId && userData) {
-      const userDocRef = doc(db, 'users', userId, 'materi', 'matematika');
+      const userDocRef = doc(db, 'users', userId, 'materi', 'kimia');
       const currentStatus = !videoCompleted;
       await setDoc(userDocRef, {
         [`video${videoId}`]: currentStatus // Mengubah value menjadi true/false
@@ -107,7 +108,7 @@ const Math = () => {
 
   useEffect(() => {
     if (selectedVideo && userData) {
-      const completedStatus = userData.materi?.matematika[`video${selectedVideo}`] || false;
+      const completedStatus = userData.materi?.kimia[`video${selectedVideo}`] || false;
       setVideoCompleted(completedStatus);
     }
   }, [selectedVideo, userData]);
@@ -129,7 +130,7 @@ const Math = () => {
 
   const saveQuizResult = async (calculatedScore) => {
     if (userId && userData) {
-      const userDocRef = doc(db, 'users', userId, 'kuis', 'matematika');
+      const userDocRef = doc(db, 'users', userId, 'kuis', 'kimia');
       await setDoc(userDocRef, {
         kuisStatus: true,
         score: calculatedScore
@@ -140,8 +141,8 @@ const Math = () => {
 
   return (
     <div className={styles.Container}>
-      <h1 className={styles.title}>Kursus Matematika</h1>
-      <p className={styles.description}>Deskripsi singkat tentang kursus Matematika.</p>
+      <h1 className={styles.title}>Kursus Kimia</h1>
+      <p className={styles.description}>Deskripsi singkat tentang kursus Kimia.</p>
       <div>
         <h2 className={styles.subtitle}>Pilih Video</h2>
         <select className={styles.videoSelect} onChange={(e) => setSelectedVideo(e.target.value)}>
@@ -165,7 +166,7 @@ const Math = () => {
         </div>
       )}
       <div className={styles.quizSection}>
-        <h2 className={styles.subtitle}>Kuis Matematika</h2>
+        <h2 className={styles.subtitle}>Kuis Kimia</h2>
         {!quizCompleted ? (
           <form onSubmit={handleQuizSubmit}>
             <div className={styles.question}>
@@ -192,4 +193,4 @@ const Math = () => {
   );
 };
 
-export default Math;
+export default Chemistry;

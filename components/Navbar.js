@@ -43,7 +43,7 @@ const NavBar = () => {
             <Navbar.Brand className={styles['navbar-brand']} href="/">VirtualLab</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav>
+                <Nav className={styles['nav']}>
                     <div className={styles['nav']}>
                         <div className={styles['nav-left']}> 
                             <Nav.Link className={styles['nav-link']} as={Link} href="/">Home</Nav.Link>
