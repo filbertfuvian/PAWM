@@ -3,9 +3,9 @@ import styles from '../styles/Home.module.css'
 
 
 const courses = [
-    { id: 1, title: 'Matematika', image: 'PAWM/public/math.jpg', link:'/courses/math' },
-    { id: 2, title: 'Fisika', image: 'PAWM/public/physics.webp', link:'/courses/physics' },
-    { id: 3, title: 'Kimia', image: 'PAWM/public/chemistry.jpeg', link:'/courses/chemistry' },
+    { id: 1, title: 'Matematika', image: '/PAWM/public/math.jpg', link:'/courses/math' },
+    { id: 2, title: 'Fisika', image: '/PAWM/public/physics.webp', link:'/courses/physics' },
+    { id: 3, title: 'Kimia', image: '/PAWM/public/chemistry.jpeg', link:'/courses/chemistry' },
 ];
 
 export default function Home() {
