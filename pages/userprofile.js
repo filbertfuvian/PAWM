@@ -1,4 +1,3 @@
-// pages/userprofile.js
 import React, { useEffect, useState } from 'react';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../lib/firebase'
